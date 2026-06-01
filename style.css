@@ -202,7 +202,7 @@ footer {
 
 
 /* --- Adaptation mobile complète --- */
-@media (max-width: 1281px) { /**/
+@media (max-width: 1281px) {
 
     /* Le body doit pouvoir se réduire */
     body {
