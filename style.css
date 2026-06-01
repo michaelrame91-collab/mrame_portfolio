@@ -288,12 +288,8 @@ footer {
 }
 
 /*Animation d'attente*/
-.dots {
-  display: inline-block;
-}
 .dots span {
   opacity: 0;
-  display: inline-block;
   font-family: inherit; /* hérite de h2 */
   font-size: inherit;
   animation: cycle 4s infinite;
