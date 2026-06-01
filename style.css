@@ -288,9 +288,6 @@ footer {
 }
 
 /*Animation d'attente*/
-h2 {
-  display: inline;
-}
 .dots {
   display: inline-block;
 }
