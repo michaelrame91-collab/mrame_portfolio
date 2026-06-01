@@ -1,10 +1,20 @@
+@font-face {
+    font-family: 'WingdingsLocal';
+    src: url('fonts/wingding.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f4f4f4;
     color: rgba(0, 0, 0);
     text-align: center;
-    white-space: nowrap;        /*Evite les sauts de lignes automatiques*/
     max-width: 100%;
     min-width: 1010px;           /*Sert au rétrécissement de la page*/
 }
@@ -12,18 +22,18 @@ body {
 
 
 
-/*Tout ce qui concerne le header*/
+
 header {
     background: black;
-    color: #fff;
-    padding: 17px;
+    color: gray;
+    padding: 11px;
     width: auto;
     height: auto;
 
     display: flex;              /* Place textes + image sur la même ligne */
     justify-content: center;    /* Centre le bloc texte */
     align-items: center;        /* Aligne verticalement */
-    gap: 58px;                  /* Espace entre texte et image */
+    gap: 40px;                  /* Espace entre texte et image */
 }
 
 header h1 {
@@ -31,10 +41,6 @@ header h1 {
 }
 header p {
     font-size: 25px;
-}
-
-.header-color {
-    color: gray;         /* Centre le titre + paragraphe */
 }
 
 header img {
@@ -73,7 +79,7 @@ nav a:hover {
 
 
 main {
-    max-width: 1120px;
+    max-width: 1030px;
     margin: 20px auto;
     border-radius: 40px; /*Sert à arrondir l'encadré*/
     background: white;
@@ -155,7 +161,7 @@ footer {
 .gaster-glitch p, .gaster-glitch h1 {
     position: relative;
     animation: gaster-shake 0.1s infinite steps(2, end);
-    font-family: "Wingdings";
+    font-family: 'WingdingsLocal';
 }
 /* reflet rouge*/
 .gaster-glitch p::before, .gaster-glitch h1::before {
@@ -208,14 +214,13 @@ footer {
     /* Header en colonne */
     header {
         flex-direction: column;
-        gap: 20px;
+        gap: 0px;
         padding: 20px;
         text-align: center;
     }
-    header img {
-        width: 110px;
-        height: 110px;
-    }
+    
+
+
 
 
     /* Navigation plus flexible */
@@ -280,4 +285,29 @@ footer {
         display: inline-block;
         max-width: 100%;        /* ne dépasse jamais l'écran */
     }
+}
+
+/*Animation d'attente*/
+h2 {
+  display: inline;
+}
+.dots {
+  display: inline-block;
+}
+.dots span {
+  opacity: 0;
+  display: inline-block;
+  font-family: inherit; /* hérite de h2 */
+  font-size: inherit;
+  animation: cycle 4s infinite;
+}
+.dots span:nth-child(1) { animation-delay: 0s; }
+.dots span:nth-child(2) { animation-delay: 0.5s; }
+.dots span:nth-child(3) { animation-delay: 1s; }
+
+@keyframes cycle {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 1; } /* seul le point 1 apparaît ici */
+  30% { opacity: 1; } /* seul le point 2 apparaît ici */
+  50% { opacity: 1; } /* seul le point 3 apparaît ici */
 }
