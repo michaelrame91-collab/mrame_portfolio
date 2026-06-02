@@ -35,7 +35,7 @@ document.getElementById("gaster-img").addEventListener("click", function () {
     }
     
     if (r < 0.62) {
-        window.open("https://fr.wikipedia.org/wiki/Deltarune", "_blank");
+        window.open("Mystère2.txt", "_blank");
         return;
     }
 
