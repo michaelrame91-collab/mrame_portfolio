@@ -230,7 +230,7 @@ footer {
   opacity: 0;
   font-family: inherit; /* hérite de h2 */
   font-size: inherit;
-  animation: cycle 4s infinite;
+  animation: cycle 3s infinite;
 }
 .dots span:nth-child(1) { animation-delay: 0s; }
 .dots span:nth-child(2) { animation-delay: 0.5s; }
