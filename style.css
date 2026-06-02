@@ -77,6 +77,10 @@ main {
     place-items: center; /*Avec le display "grid", permet de centrer l'ensemble des éléments du main*/
 }
 
+main p {
+    max-width: 850px;
+}
+
 
 
 
