@@ -78,7 +78,8 @@ main {
 }
 
 main p {
-    max-width: 850px;
+    max-width: 832px;
+    text-align: left;
 }
 
 
