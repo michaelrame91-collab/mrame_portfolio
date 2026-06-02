@@ -34,7 +34,7 @@ document.getElementById("gaster-img").addEventListener("click", function () {
         return;
     }
     
-    if (r < 0.62) {
+    if (r < 0.71) {
         window.open("Mystère2.txt", "_blank");
         return;
     }
