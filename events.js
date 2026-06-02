@@ -33,6 +33,11 @@ document.getElementById("gaster-img").addEventListener("click", function () {
         window.open("https://fr.wikipedia.org/wiki/Deltarune", "_blank");
         return;
     }
+    
+    if (r < 0.62) {
+        window.open("https://fr.wikipedia.org/wiki/Deltarune", "_blank");
+        return;
+    }
 
     window.open("Gaster.png", "_blank");
 });
