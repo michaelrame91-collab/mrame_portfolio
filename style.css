@@ -82,6 +82,15 @@ main p {
     text-align: left;
 }
 
+main hr {
+  border: none;
+  height: 1px;
+  background: black;
+  display: block;
+  margin: 20px auto; /* centre la ligne horizontalement */
+  width: 94%;
+}
+
 
 
 
