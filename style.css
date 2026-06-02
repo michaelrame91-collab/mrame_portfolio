@@ -1,14 +1,3 @@
-@font-face {
-    font-family: 'WingdingsLocal';
-    src: url('fonts/wingding.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-
-
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -157,46 +146,6 @@ footer {
     max-width: auto;
 }
 
-/* Glitch uniquement sur le p */
-.gaster-glitch p, .gaster-glitch h1 {
-    position: relative;
-    animation: gaster-shake 0.1s infinite steps(2, end);
-    font-family: 'WingdingsLocal';
-}
-/* reflet rouge*/
-.gaster-glitch p::before, .gaster-glitch h1::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 50%; /* centre */
-    transform: translateX(-50%) translate(3px, -1.5px); /*décalage glitch */
-    color: red;
-    opacity: 0.8;
-    pointer-events: none; /* ne bloque plus le clic */
-}
-/* reflet cyan*/
-.gaster-glitch p::after, .gaster-glitch h1::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 50%; /* centre */
-    transform: translateX(-50%) translate(-2px, 4px); /* décalage glitch */
-    color: cyan;
-    opacity: 0.8;
-    pointer-events: none; /* ne bloque plus le clic */
-}
-/* Tremblement de texte*/
-@keyframes gaster-shake {
-    0% { transform: translate(0,0); }
-    50% { transform: translate(0.8px,-0.8px); }
-    100% { transform: translate(0,0); }
-}
-.gaster-glitch a {
-    color: white;        /* remet une couleur visible */
-    text-decoration: none; /* enlève le soulignement */
-}
-
-
 
 
 
@@ -273,17 +222,6 @@ footer {
     }
     main p {
         font-size: 12pt;
-    }
-
-
-    /* Wingdings adapté au mobile */
-    .gaster-glitch p,
-    .gaster-glitch p::before,
-    .gaster-glitch p::after {
-        font-size: 9px;        /* plus petit pour tenir*/
-        white-space: nowrap;    /* jamais de retour à la ligne */
-        display: inline-block;
-        max-width: 100%;        /* ne dépasse jamais l'écran */
     }
 }
 
