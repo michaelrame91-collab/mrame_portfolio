@@ -1,0 +1,271 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: rgba(0, 0, 0);
+    text-align: center;
+    max-width: 100%;
+    min-width: 1010px;           /*Sert au rétrécissement de la page*/
+}
+
+
+
+
+
+header {
+    background: black;
+    color: gray;
+    padding: 11px;
+    width: auto;
+    height: auto;
+
+    display: flex;              /* Place textes + image sur la même ligne */
+    justify-content: center;    /* Centre le bloc texte */
+    align-items: center;        /* Aligne verticalement */
+    gap: 40px;                  /* Espace entre texte et image */
+}
+
+header h1 {
+    font-size: 44px;
+}
+header p {
+    font-size: 25px;
+}
+
+header img {
+    width: 148px;
+    height: 148px;
+    border-radius: 31%;
+    object-fit: cover; /*Pour la proportion, ça évite d'étirer*/
+}
+
+
+
+
+/*Tout ce qui concerne la navigation entre les pages*/
+nav {
+    background: #b4adad;
+    display: flex;
+    justify-content: center;
+    gap: 67px;
+    padding: 13px;
+    font-size: large;
+}
+
+nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: rgb(38, 46, 135);
+    text-decoration: underline;
+}
+
+
+
+
+
+main {
+    max-width: 1030px;
+    margin: 20px auto;
+    border-radius: 40px; /*Sert à arrondir l'encadré*/
+    background: white;
+    padding: 20px;
+    display: grid;
+    place-items: center; /*Avec le display "grid", permet de centrer l'ensemble des éléments du main*/
+}
+
+main p {
+    max-width: 832px;
+    text-align: left;
+}
+
+main a {
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    height: auto;
+}
+
+main hr {
+  border: none;
+  height: 1px;
+  background: black;
+  display: block;
+  margin: 20px auto; /* centre la ligne horizontalement */
+  width: 94%;
+}
+
+main .skills-mini {
+    max-width: 733px;
+}
+
+
+
+
+
+.skills-mini {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 26px;
+}
+
+.mini-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 17px;
+    background: white;
+}
+
+.mini-item img { /*Pour les longueurs et largeurs des images se trouvant dans mini-item*/
+    width: 53px;
+    height: 53px;
+}
+
+.mini-item span {
+    margin-top: 5px;
+    font-size: 13px;
+    text-align: center;
+}
+
+
+
+
+
+.gauche {
+    justify-self: start;
+    text-align: left;
+}
+
+
+
+
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+tr, th, td {
+    color: black;
+    border: 1px solid black;
+    padding: 13px;
+    font-size: 22px;
+}
+
+
+
+
+
+footer {
+    background: black;
+    color: #fff;
+    text-align: center;
+    padding: 4px;
+    max-width: auto;
+}
+
+
+
+
+
+/* --- Adaptation mobile complète --- */
+@media (max-width: 1281px) {
+
+    /* Le body doit pouvoir se réduire */
+    body {
+        white-space: normal;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    /* Header en colonne */
+    header {
+        flex-direction: column;
+        gap: 0px;
+        padding: 20px;
+        text-align: center;
+    }
+    
+
+
+
+
+    /* Navigation plus flexible */
+    nav {
+        flex-wrap: wrap;
+        gap: 20px;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+
+    /* Compétences : icônes plus petites */
+    .skills-mini {
+        gap: 15px;
+    }
+    .mini-item {
+        width: 70px;
+        padding: 6px;
+    }
+    .mini-item img {
+        width: 45px;
+        height: 45px;
+    }
+
+
+    /* Tableau lisible */
+    table {
+        font-size: 14px;
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+    th, td {
+        padding: 7px;
+    }
+
+
+    /* Empêche le texte du main de déborder */
+    main {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    main h1 {
+        font-size: 16pt;
+    }
+    main h2 {
+        font-size: 14pt;
+    }
+    main p {
+        font-size: 12pt;
+    }
+}
+
+/*Animation d'attente*/
+.dots span {
+  opacity: 0;
+  font-family: inherit; /* hérite de h2 */
+  font-size: inherit;
+  animation: cycle 3s infinite;
+}
+.dots span:nth-child(1) { animation-delay: 0s; }
+.dots span:nth-child(2) { animation-delay: 0.5s; }
+.dots span:nth-child(3) { animation-delay: 1s; }
+
+@keyframes cycle {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 1; } /* seul le point 1 apparaît ici */
+  30% { opacity: 1; } /* seul le point 2 apparaît ici */
+  50% { opacity: 1; } /* seul le point 3 apparaît ici */
+}
