@@ -1,4 +1,17 @@
 /**Ne sers qu'à ajouter des évènements aléatoires pas vraiments importants*/
+document.querySelectorAll('.superlink').forEach(function(link) {
+    link.addEventListener("click", function() {
+
+    let r = Math.random(); /**Génère aléatoirement entre 0 et 0.999999999999999... */
+
+    if (r < 0.1) {
+        // Changer le fond en tv.gif
+        document.body.style.backgroundImage = "url('tv.gif')";
+        return;
+    }
+    });
+});
+
 document.getElementById("gaster-img").addEventListener("click", function () {
 
     let r = Math.random(); /**Génère aléatoirement entre 0 et 0.999999999999999... */
