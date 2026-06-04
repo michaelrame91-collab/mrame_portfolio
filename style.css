@@ -93,7 +93,7 @@ main a, header a, .block {
     text-decoration: none;
 }
 
-main a:hover, header a:hover, .block:hover {
+main a:hover, header a:hover {
     color: rgb(38, 46, 135);
     text-decoration: underline;
 }
