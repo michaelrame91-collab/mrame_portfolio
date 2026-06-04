@@ -84,7 +84,7 @@ main p {
 
 main a, header a {
     display: inline-block;
-    border: 2px solid #ccc;
+    border: 2px solid black;
     color: red;
     border-radius: 8px;
     text-align: center;
