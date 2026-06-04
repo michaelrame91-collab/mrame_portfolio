@@ -48,7 +48,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 67px;
-    padding: 13px;
+    padding: 17px;
     font-size: large;
 }
 
@@ -93,7 +93,7 @@ main a, header a, .block {
     text-decoration: none;
 }
 
-main a:hover, header a:hover {
+main a:hover, header a:hover, .block:hover {
     color: rgb(38, 46, 135);
     text-decoration: underline;
 }
@@ -275,4 +275,16 @@ footer {
   10% { opacity: 1; } /* seul le point 1 apparaît ici */
   30% { opacity: 1; } /* seul le point 2 apparaît ici */
   50% { opacity: 1; } /* seul le point 3 apparaît ici */
+}
+
+@keyframes colorChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
