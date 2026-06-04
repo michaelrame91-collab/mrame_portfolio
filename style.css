@@ -82,13 +82,20 @@ main p {
     text-align: left;
 }
 
-main a {
+main a, header a {
     display: inline-block;
     border: 2px solid #ccc;
+    color: red;
     border-radius: 8px;
     text-align: center;
     padding: 10px;
     height: auto;
+    text-decoration: none;
+}
+
+main a:hover, header a:hover {
+    color: rgb(38, 46, 135);
+    text-decoration: underline;
 }
 
 main hr {
