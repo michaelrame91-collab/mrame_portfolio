@@ -82,7 +82,7 @@ main p {
     text-align: left;
 }
 
-main a, header a {
+main a, header a, .block {
     display: inline-block;
     border: 2px solid black;
     color: red;
