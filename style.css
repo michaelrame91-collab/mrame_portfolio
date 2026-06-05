@@ -221,17 +221,7 @@ footer {
         min-width: 0;
         overflow-x: hidden;
     }
-
-    /* Header en colonne */
-    header {
-        flex-direction: column;
-        gap: 0px;
-        padding: 20px;
-        text-align: center;
-    }
     
-
-
 
 
     /* Navigation plus flexible */
@@ -245,7 +235,7 @@ footer {
 
 
 
-    
+
     /* Compétences : icônes plus petites */
     .skills-mini {
         gap: 15px;
@@ -293,6 +283,16 @@ footer {
   .burger {
     display: none;
   }
+}
+
+@media (max-width: 611px){
+    /* Header en colonne */
+    header {
+        flex-direction: column;
+        gap: 0px;
+        padding: 20px;
+        text-align: center;
+    }
 }
 
 /*Animation d'attente*/
