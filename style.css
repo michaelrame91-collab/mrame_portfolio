@@ -2,8 +2,9 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f4f4f4;
-    color: black;
+    color: rgba(0, 0, 0);
     text-align: center;
+    max-width: 100%;
     min-width: 1010px;           /*Sert au rétrécissement de la page*/
 }
 
@@ -242,8 +243,7 @@ footer {
 
     /* Empêche le texte du main de déborder */
     main {
-        width: 100%;
-        max-width: 100%;
+        max-width: 94%;
         box-sizing: border-box;
     }
     main h1 {
