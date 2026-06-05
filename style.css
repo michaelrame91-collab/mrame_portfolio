@@ -47,6 +47,7 @@ nav {
     background: #b4adad;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 67px;
     padding: 17px;
     font-size: large;
@@ -62,7 +63,6 @@ nav a:hover {
     color: rgb(38, 46, 135);
     text-decoration: underline;
 }
-
 
 
 
@@ -186,6 +186,34 @@ footer {
 
 /* --- Adaptation mobile complète --- */
 @media (max-width: 1281px) {
+    .burger {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute; /* pour le placer où tu veux */
+        top: 10px;
+        right: 20px;
+        z-index: 1000;
+  }
+
+  /* Cache le menu par défaut en mobile */
+    #menu {
+        display: none;
+        flex-direction: column;
+        background: #b4adad; /* ou autre couleur de fond */
+        position: absolute;
+        top: 50px; /* ajuste si besoin */
+        right: 10px;
+        padding: 10px;
+        border: 1px solid #999;
+        z-index: 999;
+    }
+
+    /* Affiche le menu si la case est cochée */
+    #menu-toggle:checked + .burger + #menu {
+        display: flex;
+    }
 
     /* Le body doit pouvoir se réduire */
     body {
@@ -215,6 +243,9 @@ footer {
     }
 
 
+
+
+    
     /* Compétences : icônes plus petites */
     .skills-mini {
         gap: 15px;
@@ -255,6 +286,13 @@ footer {
     main p {
         font-size: 12pt;
     }
+}
+
+/* Cacher le burger en grand écran */
+@media (min-width: 1282px) {
+  .burger {
+    display: none;
+  }
 }
 
 /*Animation d'attente*/

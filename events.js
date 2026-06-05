@@ -1,4 +1,27 @@
-/**Ne sers qu'à ajouter des évènements aléatoires pas vraiments importants*/
+/**Sers pour le menu burger*/
+document.addEventListener('click', function(event) {
+    const toggle = document.getElementById('menu-toggle');
+    const burger = document.querySelector('.burger');
+    const menu = document.getElementById('menu');
+
+    const clickOnBurger =
+        burger.contains(event.target) ||
+        event.target === toggle;
+
+    if (
+        toggle.checked &&
+        !clickOnBurger &&
+        !menu.contains(event.target)
+    ) {
+        toggle.checked = false;
+    }
+});
+
+
+
+
+
+/**Ne sers qu'à ajouter des easters eggs*/
 document.querySelectorAll('.superlink').forEach(function(link) {
     link.addEventListener("click", function() {
 
