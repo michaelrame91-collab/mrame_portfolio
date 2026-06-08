@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css2tp2.css">
+</head>
+<body>
+    <!--Mise en place d'un titre-->
+    <h2>Tableau centré de 500 x 400 pixels (titre H2, centré)</h2>
+    <!--align="center" permet de centrer le tableau-->
+    <table align="center">
+        <!--Le nombre de tr représente le nombre de ligne, il y en a 5 donc il y aura 5 lignes-->
+        <!--Le colspan représente le nombre de colonnes qu'occupe la case. Le rowspan est pareil mais avec le nombre de lignes.-->
+        <!--Les class permettent au CSS d'apporter les modifications voulues-->
+        <tr>
+            <td class="centre" colspan="4">Regroupement horizontal de 4 cellules</td>
+        </tr>
+
+        <tr>
+            <td class="centre" rowspan="4">Regroupement<br>vertical<br>de 4 cellules</td>
+            <td class="droite_vert" colspan="2">Deux horizontales...<br>...sur fond vert</td>
+            <td class="gauche_haut_rouge" rowspan="2">Deux verticales...<br>...sur fond rouge</td>
+        </tr>
+
+        <tr>
+            <td class="gauche">Gauche</td>
+            <td class="centre">Ca vit<br>juste<br>en dessous</td>
+        </tr>
+
+        <tr>
+            <td class="centre_bas_bleu" rowspan="2">Deux verticales...<br>...sur fond bleu</td>
+            <td><img src="image.png" alt="Une image"></td>
+            <td class="droite">Droite</td>
+        </tr>
+
+        <tr>
+            <td class="droite" colspan="2">Encore deux horizontales</td>
+        </tr>
+    </table>
+    <a href="Explications.txt" target="_blank">Les codes pour créer ce tableau.</a>
+</body>
+</html>
