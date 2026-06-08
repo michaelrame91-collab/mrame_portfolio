@@ -75,6 +75,7 @@ main {
     padding: 20px;
     display: grid;
     place-items: center; /*Avec le display "grid", permet de centrer l'ensemble des éléments du main*/
+    margin-bottom: 76px;
 }
 
 main p {
@@ -177,7 +178,10 @@ footer {
     color: #fff;
     text-align: center;
     padding: 2px;
-    max-width: auto;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    margin-top: 67px;
 }
 
 
