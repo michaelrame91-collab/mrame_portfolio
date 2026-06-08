@@ -191,7 +191,7 @@ footer {
 @media (max-width: 1281px) {
     .burger {
         display: block;
-        font-size: 30px;
+        font-size: 22px;
         cursor: pointer;
         padding: 10px;
         position: absolute; /* pour le placer où tu veux */
