@@ -68,6 +68,7 @@ table{
     height: 400px;
 }
 
+/*Modifications des class en HTML*/
 .centre {
     text-align: center;
 }
