@@ -37,13 +37,44 @@
     </nav>
 
     <main><br>
-        <h2>Contactez-moi :</h2><br>
+        <h2>Coordonnées :</h2><br>
+        <p>Localisation : <a href="https://www.google.com/maps/place/%C3%8Ele-de-France/@48.678901,1.8432945,9z/data=!3m1!4b1!4m6!3m5!1s0x47e5e1c403a68c17:0x10b82c3688b2570!8m2!3d48.8499198!4d2.6370411!16zL20vMDVxcTZt?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="superlink">France, Île de France.</a></p>
+        <p><a href="https://maps.app.goo.gl/fVaybfHMMBvSSp3E7" target="_blank" class="superlink">47 Route de la Pierre Levée, 91780 Saint-Hilaire.</a></p><br>
         <p>Email : <a href="https://mail.google.com/mail/?view=cm&fs=1&to=michael.rame91@gmail.com" target="_blank" class="superlink">michael.rame91@gmail.com</a></p>
         <p>Téléphone : <a href="tel:+33769070924" class="superlink">+33 7 69 07 09 24</a></p>
         <br><hr><br>
-        <h2>Me trouver :</h2><br>
-        <p><a href="https://www.google.com/maps/place/%C3%8Ele-de-France/@48.678901,1.8432945,9z/data=!3m1!4b1!4m6!3m5!1s0x47e5e1c403a68c17:0x10b82c3688b2570!8m2!3d48.8499198!4d2.6370411!16zL20vMDVxcTZt?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="superlink">France, Île de France.</a></p>
-        <p><a href="https://maps.app.goo.gl/fVaybfHMMBvSSp3E7" target="_blank" class="superlink">47 Route de la Pierre Levée, 91780 Saint-Hilaire.</a></p><br>
+        <div class="contact-box">
+            <form action="https://formsubmit.co/michael.rame91@gmail.com" method="POST" class="contact-form">
+            <h2>Contactez-moi</h2>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Nouveau message depuis mon portfolio">
+
+            <div class="row">
+                <div class="field">
+                    <label for="name">Nom</label>
+                    <input type="text" name="Nom" id="name" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" name="Email" id="email" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="subject">Sujet</label>
+                <input type="text" name="Sujet" id="subject" required>
+            </div>
+
+            <div class="field">
+                <label for="message">Message</label>
+                <textarea name="Message" id="message" rows="7" required></textarea>
+            </div>
+
+            <button type="submit">Envoyer le message</button>
+
+        </form>
+        </div>
     </main>
 
     <footer>
