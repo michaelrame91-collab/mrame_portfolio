@@ -27,7 +27,7 @@ document.querySelectorAll('.superlink').forEach(function(link) {
 
     let r = Math.random(); /**Génère aléatoirement entre 0 et 0.999999999999999... */
 
-    if (r < 0.11) {
+    if (r < 0.08) {
         // Changer le fond en tv.gif
         document.body.style.backgroundImage = "url('tv.gif')";
         return;
