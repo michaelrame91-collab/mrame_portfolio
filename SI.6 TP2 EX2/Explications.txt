@@ -46,7 +46,7 @@
 Le lien de ce fichier n'est pas inclus dans le HTML de base (Car c'est un ajout prévu pour le portfolio pour expliquer le code qui m'a permis de créer le tableau)
 
 De toute manière, il suffit d'ajouter la balise <a> (Dans ce cas : <a href="Explications.txt" target="_blank">Les codes pour créer ce tableau.</a>)
-...dans le HTML pour ouvrir ce fichier sur une nouvelle page
+...dans le HTML à la toute fin du body pour ouvrir ce fichier sur une nouvelle page
 
 
 Voici le CSS pour le tableau :
