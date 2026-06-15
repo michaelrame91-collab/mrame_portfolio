@@ -151,6 +151,6 @@ document.getElementById("gaster-img").addEventListener("click", function () {
     // arrêt automatique
     setTimeout(() => {
         reset();
-        alert("❄︎◆︎ ♏︎⬧︎ ❑︎◆︎♏︎●︎❑︎◆︎🕯︎◆︎■︎ ♎︎♏︎ ◻︎♏︎❒︎⬧︎🡹❖︎🡹❒︎♋︎■︎⧫︎📪︎ ■︎🕯︎♏︎⬧︎⧫︎📫︎♍︎♏︎ ◻︎♋︎⬧︎ ✍︎")
+        alert("❄︎◆︎ ♏︎⬧︎ ❑︎◆︎♏︎●︎❑︎◆︎🕯︎◆︎■︎ ♎︎🕯︎♋︎⬧︎⬧︎♏︎⌘︎ ♍︎◆︎❒︎♓︎♏︎◆︎⌧︎📪︎ ■︎🕯︎♏︎⬧︎⧫︎📫︎♍︎♏︎ ◻︎♋︎⬧︎ ✍︎")
     }, 4000);
 });
