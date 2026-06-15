@@ -35,6 +35,8 @@ document.querySelectorAll('.superlink').forEach(function(link) {
     });
 });
 
+
+
 document.getElementById("gaster-img").addEventListener("click", function () {
 
     let r = Math.random();
@@ -171,16 +173,18 @@ document.getElementById("gaster-img").addEventListener("click", function () {
     if (!step4) {
         alert("👁️ Trop tard pour fuir...");
         reset();
-
+        
         let shake = setInterval(() => {
             const x = (Math.random() - 0.5) * 8;
             const y = (Math.random() - 0.5) * 8;
             root.style.transform = `translate(${x}px, ${y}px)`;
+            root.style.filter = "invert(1)"
         }, 30);
 
         setTimeout(() => {
             clearInterval(shake);
             root.style.transform = "none";
+            root.style.filter = "none"
             alert("👁️ Je t'ai eu...");
         }, 3100);
 
