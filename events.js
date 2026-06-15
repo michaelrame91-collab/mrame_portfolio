@@ -61,99 +61,96 @@ document.getElementById("gaster-img").addEventListener("click", function () {
         return;
     }
 
-    if (r < 0.71) {
-        window.open("https://fr.wikipedia.org/wiki/Deltarune", "_blank");
-        return;
-    }
-
-    if (r < 0.91) {
+    if (r < 0.80) {
         window.open("Mystère.txt", "_blank");
         return;
     }
 
-const img = document.getElementById("gaster-img");
 
-let glitchInterval = null;
 
-// Effet sur l'image
-img.style.filter = "contrast(2) saturate(0) hue-rotate(180deg)";
-img.style.transform = "scale(1.1) rotate(2deg)";
+    const img = document.getElementById("gaster-img");
 
-// Effet global
-document.documentElement.style.filter = "invert(1)";
+    let glitchInterval = null;
 
-// 🔧 RESET UNIQUE (accessible partout)
-function reset() {
-    clearInterval(glitchInterval);
+    // Effet sur l'image
+    img.style.filter = "contrast(2) saturate(0) hue-rotate(180deg)";
+    img.style.transform = "scale(1.1) rotate(2deg)";
 
-    img.style.filter = "none";
-    img.style.transform = "none";
+    // Effet global
+    document.documentElement.style.filter = "invert(1)";
 
-    document.documentElement.style.filter = "none";
-    document.documentElement.style.transform = "none";
-}
+    // 🔧 RESET UNIQUE (accessible partout)
+    function reset() {
+        clearInterval(glitchInterval);
 
-// 🔥 GLITCH JS ACTIF
-glitchInterval = setInterval(() => {
-    const x = (Math.random() - 0.5) * 8;
-    const y = (Math.random() - 0.5) * 8;
-    const hue = Math.random() * 360;
+        img.style.filter = "none";
+        img.style.transform = "none";
 
-    document.documentElement.style.transform = `translate(${x}px, ${y}px)`;
-    document.documentElement.style.filter = `invert(1) hue-rotate(${hue}deg) contrast(1.5)`;
-}, 40);
-
-// ---- STEPS ----
-
-const step1 = confirm("👁️ Une présence t’observe...");
-if (!step1) {
-    alert("...");
-    console.log("...");
-    reset();
-    return;
-}
-
-const step2 = confirm("👁️ Continue à cliquer...");
-if (!step2) {
-    alert("👁️ Tu as reculé...");
-    console.log("👁️ Si tôt...");
-    reset();
-    return;
-}
-
-const step3 = confirm("👁️ N'aie pas peur...");
-if (!step3) {
-    alert("👁️ Trop tard pour fuir...");
-    console.log("👁️ En plein milieu du chemin...");
-
-    reset();
-
-    // 🔥 AJOUT : petit tremblement même après reset
-    let shake = setInterval(() => {
-        const x = (Math.random() - 0.5) * 20;
-        const y = (Math.random() - 0.5) * 20;
-        document.documentElement.style.transform = `translate(${x}px, ${y}px)`;
-    }, 30);
-
-    setTimeout(() => {
-        clearInterval(shake);
+        document.documentElement.style.filter = "none";
         document.documentElement.style.transform = "none";
-        alert("👁️ Je t'ai eu...")
-    }, 3100);
-    return;
-}
+    }
 
-const step4 = confirm("👁️ Tu y es presque...");
-if (!step4) {
-    alert("👁️ Presque... mais non.");
-    console.log("👁️ Quelle déception...");
-    reset();
-    return;
-}
+    // 🔥 GLITCH JS ACTIF
+    glitchInterval = setInterval(() => {
+        const x = (Math.random() - 0.5) * 8;
+        const y = (Math.random() - 0.5) * 8;
+        const hue = Math.random() * 360;
 
-// arrêt automatique
-setTimeout(() => {
-    reset();
-    alert("❄︎◆︎ ♏︎⬧︎ ❑︎◆︎♏︎●︎❑︎◆︎🕯︎◆︎■︎ ♎︎♏︎ ◻︎♏︎❒︎⬧︎🡹❖︎🡹❒︎♋︎■︎⧫︎📪︎ ■︎🕯︎♏︎⬧︎⧫︎📫︎♍︎♏︎ ◻︎♋︎⬧︎ ✍︎")
-}, 4000);
+        document.documentElement.style.transform = `translate(${x}px, ${y}px)`;
+        document.documentElement.style.filter = `invert(1) hue-rotate(${hue}deg) contrast(1.5)`;
+    }, 40);
+
+    // ---- STEPS ----
+
+    const step1 = confirm("👁️ Une présence t’observe...");
+    if (!step1) {
+        alert("...");
+        console.log("...");
+        reset();
+        return;
+    }
+
+    const step2 = confirm("👁️ Continue à cliquer...");
+    if (!step2) {
+        alert("👁️ Tu as reculé...");
+        console.log("👁️ Si tôt...");
+        reset();
+        return;
+    }
+
+    const step3 = confirm("👁️ N'aie pas peur...");
+    if (!step3) {
+        alert("👁️ Trop tard pour fuir...");
+        console.log("👁️ En plein milieu du chemin...");
+
+        reset();
+
+        // 🔥 AJOUT : petit tremblement même après reset
+        let shake = setInterval(() => {
+            const x = (Math.random() - 0.5) * 20;
+            const y = (Math.random() - 0.5) * 20;
+            document.documentElement.style.transform = `translate(${x}px, ${y}px)`;
+        }, 30);
+
+        setTimeout(() => {
+            clearInterval(shake);
+            document.documentElement.style.transform = "none";
+            alert("👁️ Je t'ai eu...")
+        }, 3100);
+        return;
+    }
+
+    const step4 = confirm("👁️ Tu y es presque...");
+    if (!step4) {
+        alert("👁️ Presque... mais non.");
+        console.log("👁️ Quelle déception...");
+        reset();
+        return;
+    }
+
+    // arrêt automatique
+    setTimeout(() => {
+        reset();
+        alert("❄︎◆︎ ♏︎⬧︎ ❑︎◆︎♏︎●︎❑︎◆︎🕯︎◆︎■︎ ♎︎♏︎ ◻︎♏︎❒︎⬧︎🡹❖︎🡹❒︎♋︎■︎⧫︎📪︎ ■︎🕯︎♏︎⬧︎⧫︎📫︎♍︎♏︎ ◻︎♋︎⬧︎ ✍︎")
+    }, 4000);
 });
