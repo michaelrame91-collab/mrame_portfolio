@@ -37,122 +37,174 @@ document.querySelectorAll('.superlink').forEach(function(link) {
 
 document.getElementById("gaster-img").addEventListener("click", function () {
 
-    let r = Math.random(); /**Génère aléatoirement entre 0 et 0.999999999999999... */
+    let r = Math.random();
+
     if (r < 0.08) {
-        // Changer le fond en tv.gif
         document.body.style.backgroundImage = "url('tv.gif')";
-        // Ouvrir le lien
         window.open("https://undertale.fandom.com/fr/wiki/W._D._Gaster", "_blank");
         return;
     }
-
     if (r < 0.20) {
         window.open("https://undertale.fandom.com/wiki/Sans", "_blank");
         return;
     }
-
     if (r < 0.35) {
         window.open("https://undertale.fandom.com/fr/wiki/Papyrus", "_blank");
         return;
     }
-
     if (r < 0.53) {
         window.open("https://fr.wikipedia.org/wiki/Undertale", "_blank");
         return;
     }
-
     if (r < 0.80) {
         window.open("Mystère.txt", "_blank");
         return;
     }
 
-
-
     const img = document.getElementById("gaster-img");
+    const root = document.documentElement;
 
     let glitchInterval = null;
+    let spinInterval = null;
+    let shakeInterval = null;
 
-    // Effet sur l'image
-    img.style.filter = "contrast(2) saturate(0) hue-rotate(180deg)";
-    img.style.transform = "scale(1.1) rotate(2deg)";
-
-    // Effet global
-    document.documentElement.style.filter = "invert(1)";
-
-    // 🔧 RESET UNIQUE (accessible partout)
     function reset() {
         clearInterval(glitchInterval);
+        clearInterval(spinInterval);
+        clearInterval(shakeInterval);
+
+        const root = document.documentElement;
+
+        root.style.transition = "none";
+        root.style.transform = "none";
+        root.style.filter = "none";
 
         img.style.filter = "none";
         img.style.transform = "none";
 
-        document.documentElement.style.filter = "none";
-        document.documentElement.style.transform = "none";
+        // 🔥 force purge des frames en attente
+        requestAnimationFrame(() => {
+            root.style.transform = "none";
+        });
     }
 
-    // 🔥 GLITCH JS ACTIF
+    // Effet initial
+    img.style.filter = "contrast(2) saturate(0) hue-rotate(180deg)";
+    img.style.transform = "scale(1.1) rotate(2deg)";
+    root.style.filter = "invert(1)";
+
     glitchInterval = setInterval(() => {
         const x = (Math.random() - 0.5) * 8;
         const y = (Math.random() - 0.5) * 8;
         const hue = Math.random() * 360;
 
-        document.documentElement.style.transform = `translate(${x}px, ${y}px)`;
-        document.documentElement.style.filter = `invert(1) hue-rotate(${hue}deg) contrast(1.5)`;
+        root.style.transform = `translate(${x}px, ${y}px)`;
+        root.style.filter = `invert(1) hue-rotate(${hue}deg) contrast(1.5)`;
     }, 40);
-
-    // ---- STEPS ----
 
     const step1 = confirm("👁️ Une présence t’observe...");
     if (!step1) {
         alert("...");
-        console.log("...");
         reset();
         return;
     }
 
+    clearInterval(glitchInterval);
+    document.documentElement.style.transform = "none";
+    document.documentElement.style.filter = "none";
     const step2 = confirm("👁️ Continue à cliquer...");
     if (!step2) {
         alert("👁️ Tu as reculé...");
-        console.log("👁️ Si tôt...");
-        reset();
+
+        clearInterval(glitchInterval);
+
+        const root = document.documentElement;
+
+        root.style.filter = "none";
+        root.style.transition = "transform 0.3s ease";
+        root.style.transformOrigin = "center";
+
+        root.style.transform = "rotate(180deg)";
+
+        setTimeout(() => {
+            root.style.transition = "none";
+            root.style.transform = "none";
+            alert("👁️ Cela me fait presque tourner la tête...");
+            reset();
+        }, 3000);
+
         return;
     }
 
+    clearInterval(glitchInterval);
+    document.documentElement.style.transform = "none";
+    document.documentElement.style.filter = "none";
     const step3 = confirm("👁️ Tu y es presque...");
     if (!step3) {
+
+        const style = document.createElement("style");
+        style.textContent = `
+            @font-face {
+                font-family: "WingdingsCustom";
+                src: url("Fonts/wingding.ttf");
+            }
+            * {
+                font-family: "WingdingsCustom" !important;
+                font-size: 0.94em !important;
+                line-height: 1.4 !important;
+            }
+        `;
+
+        document.head.appendChild(style);
+
         alert("👁️ Presque... mais non.");
-        console.log("👁️ Quelle déception...");
+        setTimeout(() => style.remove(), 4000);
+
         reset();
         return;
     }
 
+    clearInterval(glitchInterval);
+    document.documentElement.style.transform = "none";
+    document.documentElement.style.filter = "none";
     const step4 = confirm("👁️ N'aie pas peur...");
     if (!step4) {
         alert("👁️ Trop tard pour fuir...");
-        console.log("👁️ En plein milieu du chemin...");
-
         reset();
 
-        // 🔥 AJOUT : petit tremblement même après reset
         let shake = setInterval(() => {
-            const x = (Math.random() - 0.5) * 20;
-            const y = (Math.random() - 0.5) * 20;
-            document.documentElement.style.transform = `translate(${x}px, ${y}px)`;
+            const x = (Math.random() - 0.5) * 8;
+            const y = (Math.random() - 0.5) * 8;
+            root.style.transform = `translate(${x}px, ${y}px)`;
         }, 30);
 
         setTimeout(() => {
             clearInterval(shake);
-            document.documentElement.style.transform = "none";
-            alert("👁️ Je t'ai eu...")
+            root.style.transform = "none";
+            alert("👁️ Je t'ai eu...");
         }, 3100);
+
         return;
     }
 
+    // 🎯 CAS FINAL : TOUS OK
+    let angle = 0;
 
+    spinInterval = setInterval(() => {
+        angle += 1;
 
-    // arrêt automatique
+        const x = Math.cos(angle * 0.2) * 4;
+        const y = Math.sin(angle * 0.2) * 4;
+
+        root.style.transform =
+            `translate(${x}px, ${y}px) rotate(${angle}deg)`;
+    }, 16);
+
     setTimeout(() => {
+        clearInterval(spinInterval);
         reset();
-        alert("❄︎◆︎ ♏︎⬧︎ ❑︎◆︎♏︎●︎❑︎◆︎🕯︎◆︎■︎ ♎︎🕯︎♋︎⬧︎⬧︎♏︎⌘︎ ♍︎◆︎❒︎♓︎♏︎◆︎⌧︎📪︎ ■︎🕯︎♏︎⬧︎⧫︎📫︎♍︎♏︎ ◻︎♋︎⬧︎ ✍︎")
+
+        alert("❄︎◆︎ ♏︎⬧︎ ❑︎◆︎♏︎●︎❑︎◆︎🕯︎◆︎■︎ ♎︎🕯︎♋︎⬧︎⬧︎♏︎⌘︎ ♍︎◆︎❒︎♓︎♏︎◆︎⌧︎📪︎ ■︎🕯︎♏︎⬧︎⧫︎📫︎♍︎♏︎ ◻︎♋︎⬧︎ ✍︎");
     }, 4000);
+
 });
