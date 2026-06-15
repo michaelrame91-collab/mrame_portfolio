@@ -118,8 +118,16 @@ document.getElementById("gaster-img").addEventListener("click", function () {
         return;
     }
 
-    const step3 = confirm("👁️ N'aie pas peur...");
+    const step3 = confirm("👁️ Tu y es presque...");
     if (!step3) {
+        alert("👁️ Presque... mais non.");
+        console.log("👁️ Quelle déception...");
+        reset();
+        return;
+    }
+
+    const step4 = confirm("👁️ N'aie pas peur...");
+    if (!step4) {
         alert("👁️ Trop tard pour fuir...");
         console.log("👁️ En plein milieu du chemin...");
 
@@ -140,13 +148,7 @@ document.getElementById("gaster-img").addEventListener("click", function () {
         return;
     }
 
-    const step4 = confirm("👁️ Tu y es presque...");
-    if (!step4) {
-        alert("👁️ Presque... mais non.");
-        console.log("👁️ Quelle déception...");
-        reset();
-        return;
-    }
+
 
     // arrêt automatique
     setTimeout(() => {
