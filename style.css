@@ -1,33 +1,40 @@
+/* =========================
+   Réglages généraux
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
+    padding-bottom: 58px; /* Évite que le footer cache le contenu */
     font-family: Arial, sans-serif;
     background: #f4f4f4;
-    color: rgba(0, 0, 0);
+    color: #000;
     text-align: center;
-    max-width: 100%;
-    min-width: 1010px;           /*Sert au rétrécissement de la page*/
+    min-width: 1010px;
 }
 
 
-
-
+/* =========================
+   En-tête
+========================= */
 
 header {
-    background: black;
+    background: #000;
     color: gray;
     padding: 11px;
-    width: auto;
-    height: auto;
-
-    display: flex;              /* Place textes + image sur la même ligne */
-    justify-content: center;    /* Centre le bloc texte */
-    align-items: center;        /* Aligne verticalement */
-    gap: 40px;                  /* Espace entre texte et image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
 }
 
 header h1 {
     font-size: 44px;
 }
+
 header p {
     font-size: 25px;
 }
@@ -36,13 +43,14 @@ header img {
     width: 148px;
     height: 148px;
     border-radius: 31%;
-    object-fit: cover; /*Pour la proportion, ça évite d'étirer*/
+    object-fit: cover;
 }
 
 
+/* =========================
+   Navigation
+========================= */
 
-
-/*Tout ce qui concerne la navigation entre les pages*/
 nav {
     background: #b4adad;
     display: flex;
@@ -54,28 +62,32 @@ nav {
 }
 
 nav a {
-    color: rgb(0, 0, 0);
+    color: #000;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav a:hover {
+nav a:hover,
+main a:hover,
+header a:hover {
     color: rgb(38, 46, 135);
     text-decoration: underline;
 }
 
 
-
+/* =========================
+   Contenu principal
+========================= */
 
 main {
     max-width: 1030px;
     margin: 20px auto;
-    border-radius: 40px; /*Sert à arrondir l'encadré*/
-    background: white;
     padding: 20px;
+    background: white;
+    border-radius: 40px;
+
     display: grid;
-    place-items: center; /*Avec le display "grid", permet de centrer l'ensemble des éléments du main*/
-    margin-bottom: 76px;
+    place-items: center;
 }
 
 main p {
@@ -83,39 +95,32 @@ main p {
     text-align: left;
 }
 
-main a, header a, .block {
+main a,
+header a,
+.block {
     display: inline-block;
-    border: 2px solid black;
-    color: red;
-    border-radius: 8px;
-    text-align: center;
     padding: 10px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    color: red;
     text-decoration: none;
 }
 
-main a:hover, header a:hover {
-    color: rgb(38, 46, 135);
-    text-decoration: underline;
-}
-
 main hr {
-  border: none;
-  height: 1px;
-  background: black;
-  display: block;
-  margin: 20px auto; /* centre la ligne horizontalement */
-  width: 94%;
-}
-
-main .skills-mini {
-    max-width: 733px;
+    width: 94%;
+    height: 1px;
+    margin: 20px auto;
+    border: 0;
+    background: #000;
 }
 
 
-
-
+/* =========================
+   Compétences
+========================= */
 
 .skills-mini {
+    max-width: 733px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -123,17 +128,18 @@ main .skills-mini {
 }
 
 .mini-item {
+    width: 80px;
+    padding: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80px;
-    padding: 8px;
+
+    background: white;
     border: 1px solid #ccc;
     border-radius: 17px;
-    background: white;
 }
 
-.mini-item img { /*Pour les longueurs et largeurs des images se trouvant dans mini-item*/
+.mini-item img {
     width: 53px;
     height: 53px;
 }
@@ -141,12 +147,7 @@ main .skills-mini {
 .mini-item span {
     margin-top: 5px;
     font-size: 13px;
-    text-align: center;
 }
-
-
-
-
 
 .gauche {
     justify-self: start;
@@ -154,69 +155,91 @@ main .skills-mini {
 }
 
 
-
-
+/* =========================
+   Tableau
+========================= */
 
 table {
     border-collapse: collapse;
     text-align: center;
 }
 
-tr, th, td {
-    color: black;
-    border: 1px solid black;
+th, td {
     padding: 13px;
+    border: 1px solid #000;
+    color: #000;
     font-size: 22px;
 }
 
 
-
-
+/* =========================
+   Footer
+========================= */
 
 footer {
-    background: black;
-    color: #fff;
-    text-align: center;
-    padding: 4px;
-    width: 100%;
     position: fixed;
     bottom: 0;
+
+    width: 100%;
+    padding: 4px;
+
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+
+    background: #000;
+    color: white;
 }
 
 footer div {
     position: absolute;
-    right: 40px;
+    right: 31px;
+
     display: flex;
-    gap: 26px;
+    gap: 22px;
+}
+
+footer img {
+    width: 38px;
+    height: 38px;
 }
 
 
+/* =========================
+   Version tablette / mobile
+========================= */
 
-/* --- Adaptation mobile complète --- */
 @media (max-width: 1281px) {
+
+    body {
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+
+    /* Menu burger */
     .burger {
         display: block;
-        font-size: 22px;
-        cursor: pointer;
-        padding: 10px;
-        position: absolute; /* pour le placer où tu veux */
+        position: absolute;
         top: 10px;
         right: 20px;
-        z-index: 1000;
-  }
 
-  /* Cache le menu par défaut en mobile */
+        padding: 10px;
+        cursor: pointer;
+        font-size: 22px;
+        z-index: 1000;
+    }
+
     #menu {
         display: none;
-        flex-direction: column;
-        background: rgb(22, 22, 22); /* ou autre couleur de fond */
         position: absolute;
-        top: 50px; /* ajuste si besoin */
+        top: 50px;
         right: 10px;
+
         padding: 10px;
+        flex-direction: column;
+
+        background: #161616;
         border: 1px solid #999;
         z-index: 999;
     }
@@ -226,103 +249,113 @@ footer div {
         font-size: 13px;
     }
 
-    #menu a:hover {
-        color: rgb(64, 73, 174);
-    }
-
-    /* Affiche le menu si la case est cochée */
     #menu-toggle:checked + .burger + #menu {
         display: flex;
     }
 
-    /* Le body doit pouvoir se réduire */
-    body {
-        white-space: normal;
-        min-width: 0;
-        overflow-x: hidden;
-    }
-    
 
-
-    /* Navigation plus flexible */
+    /* Navigation */
     nav {
-        flex-wrap: wrap;
         gap: 20px;
-        font-size: 16px;
         padding: 10px;
+        flex-wrap: wrap;
     }
 
 
-
-
-
-    /* Compétences : icônes plus petites */
+    /* Compétences */
     .skills-mini {
         gap: 15px;
     }
+
     .mini-item {
         width: 70px;
         padding: 6px;
     }
+
     .mini-item img {
         width: 45px;
         height: 45px;
     }
 
 
-    /* Tableau lisible */
+    /* Tableau */
     table {
-        font-size: 14px;
         display: block;
         max-width: 100%;
         overflow-x: auto;
     }
-    th, td {
+
+    th,
+    td {
         padding: 7px;
     }
 
 
-    /* Empêche le texte du main de déborder */
+    /* Texte */
     main {
         max-width: 94%;
-        box-sizing: border-box;
     }
+
     main h1 {
         font-size: 16pt;
     }
+
     main h2 {
         font-size: 14pt;
     }
+
     main p {
         font-size: 12pt;
     }
-}
 
-/* Cacher le burger en grand écran */
-@media (min-width: 1282px) {
-  .burger {
-    display: none;
-  }
-}
 
-@media (max-width: 611px){
-    /* Header en colonne */
-    header {
+    /* Footer */
+    footer {
         flex-direction: column;
-        gap: 0px;
-        padding: 20px;
-        text-align: center;
+    }
+
+    footer div {
+        position: static;
     }
 }
 
+
+/* Cache le burger sur ordinateur */
+
+@media (min-width: 1282px) {
+    .burger {
+        display: none;
+    }
+}
+
+
+/* Header vertical sur petits écrans */
+
+@media (max-width: 611px) {
+
+    header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 0;
+    }
+
+}
+
+
+/* Animation prévue */
+
 @keyframes colorChange {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
 }
