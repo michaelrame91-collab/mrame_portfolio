@@ -188,14 +188,9 @@ footer {
 
 footer div {
     position: absolute;
-    right: 31px;
+    right: 40px;
     display: flex;
-    gap: 17px;
-}
-
-footer img {
-    width: 40px;
-    height: auto;
+    gap: 26px;
 }
 
 
