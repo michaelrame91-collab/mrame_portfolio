@@ -1,0 +1,361 @@
+/* =========================
+   Réglages généraux
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-bottom: 58px; /* Évite que le footer cache le contenu */
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #000;
+    text-align: center;
+    min-width: 1010px;
+}
+
+
+/* =========================
+   En-tête
+========================= */
+
+header {
+    background: #000;
+    color: gray;
+    padding: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+header h1 {
+    font-size: 44px;
+}
+
+header p {
+    font-size: 25px;
+}
+
+header img {
+    width: 148px;
+    height: 148px;
+    border-radius: 31%;
+    object-fit: cover;
+}
+
+
+/* =========================
+   Navigation
+========================= */
+
+nav {
+    background: #b4adad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 67px;
+    padding: 20px;
+    font-size: large;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover,
+main a:hover,
+header a:hover {
+    color: rgb(38, 46, 135);
+    text-decoration: underline;
+}
+
+
+/* =========================
+   Contenu principal
+========================= */
+
+main {
+    max-width: 1030px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 40px;
+
+    display: grid;
+    place-items: center;
+}
+
+main p {
+    max-width: 832px;
+    text-align: left;
+}
+
+main a,
+header a,
+.block {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    color: red;
+    text-decoration: none;
+}
+
+main hr {
+    width: 94%;
+    height: 1px;
+    margin: 20px auto;
+    border: 0;
+    background: #000;
+}
+
+
+/* =========================
+   Compétences
+========================= */
+
+.skills-mini {
+    max-width: 733px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 31px;
+}
+
+.mini-item {
+    width: 80px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 17px;
+}
+
+.mini-item img {
+    width: 53px;
+    height: 53px;
+}
+
+.mini-item span {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.gauche {
+    justify-self: start;
+    text-align: left;
+}
+
+
+/* =========================
+   Tableau
+========================= */
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    padding: 13px;
+    border: 1px solid #000;
+    color: #000;
+    font-size: 22px;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+    padding: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #000;
+    color: white;
+}
+
+footer div {
+    position: absolute;
+    right: 31px;
+
+    display: flex;
+    gap: 22px;
+}
+
+footer img {
+    width: 38px;
+    height: 38px;
+}
+
+
+/* =========================
+   Version tablette / mobile
+========================= */
+
+@media (max-width: 1281px) {
+
+    body {
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+
+    /* Menu burger */
+    .burger {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+
+        padding: 10px;
+        cursor: pointer;
+        font-size: 22px;
+        z-index: 1000;
+    }
+
+    #menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+
+        padding: 10px;
+        flex-direction: column;
+
+        background: #161616;
+        border: 1px solid #999;
+        z-index: 999;
+    }
+
+    #menu a {
+        color: white;
+        font-size: 13px;
+    }
+
+    #menu-toggle:checked + .burger + #menu {
+        display: flex;
+    }
+
+
+    /* Navigation */
+    nav {
+        gap: 20px;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+
+    /* Compétences */
+    .skills-mini {
+        gap: 15px;
+    }
+
+    .mini-item {
+        width: 70px;
+        padding: 6px;
+    }
+
+    .mini-item img {
+        width: 45px;
+        height: 45px;
+    }
+
+
+    /* Tableau */
+    table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    th,
+    td {
+        padding: 7px;
+    }
+
+
+    /* Texte */
+    main {
+        max-width: 94%;
+    }
+
+    main h1 {
+        font-size: 16pt;
+    }
+
+    main h2 {
+        font-size: 14pt;
+    }
+
+    main p {
+        font-size: 12pt;
+    }
+
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+    }
+
+    footer div {
+        position: static;
+    }
+}
+
+
+/* Cache le burger sur ordinateur */
+
+@media (min-width: 1282px) {
+    .burger {
+        display: none;
+    }
+}
+
+
+/* Header vertical sur petits écrans */
+
+@media (max-width: 611px) {
+
+    header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 0;
+    }
+
+}
+
+
+/* Animation prévue */
+
+@keyframes colorChange {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css2tp2.css">
+</head>
+<body>
+    <!--Mise en place d'un titre-->
+    <h2>Tableau centré de 500 x 400 pixels (titre H2, centré)</h2>
+    <!--align="center" permet de centrer le tableau-->
+    <table align="center">
+        <!--Le nombre de tr représente le nombre de ligne, il y en a 5 donc il y aura 5 lignes-->
+        <!--Le colspan représente le nombre de colonnes qu'occupe la case. Le rowspan est pareil mais avec le nombre de lignes.-->
+        <!--Les class permettent au CSS d'apporter les modifications voulues-->
+        <tr>
+            <td class="centre" colspan="4">Regroupement horizontal de 4 cellules</td>
+        </tr>
+
+        <tr>
+            <td class="centre" rowspan="4">Regroupement<br>vertical<br>de 4 cellules</td>
+            <td class="droite_vert" colspan="2">Deux horizontales...<br>...sur fond vert</td>
+            <td class="gauche_haut_rouge" rowspan="2">Deux verticales...<br>...sur fond rouge</td>
+        </tr>
+
+        <tr>
+            <td class="gauche">Gauche</td>
+            <td class="centre">Ca vit<br>juste<br>en dessous</td>
+        </tr>
+
+        <tr>
+            <td class="centre_bas_bleu" rowspan="2">Deux verticales...<br>...sur fond bleu</td>
+            <td><img src="image.png" alt="Une image"></td>
+            <td class="droite">Droite</td>
+        </tr>
+
+        <tr>
+            <td class="droite" colspan="2">Encore deux horizontales</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+Le lien de ce fichier n'est pas inclus dans le HTML de base (Car c'est un ajout prévu pour le portfolio pour expliquer le code qui m'a permis de créer le tableau)
+
+De toute manière, il suffit d'ajouter la balise <a> (Dans ce cas : <a href="Explications.txt" target="_blank">Les codes pour créer ce tableau.</a>)
+...dans le HTML à la toute fin du body pour ouvrir ce fichier sur une nouvelle page
+
+
+Voici le CSS pour le tableau :
+
+/*aligne le titre au centre*/
+h2 {
+    text-align: center;
+}
+
+/*Créer un tableau avec couleur de fond et la bordure du tableau*/
+table, tr, td {
+    border: 1px solid black;
+    background-color: lightgray;
+}
+
+/*Taille du tableau*/
+table{
+    width: 500px;
+    height: 400px;
+}
+
+/*Modifications des class en HTML*/
+.centre {
+    text-align: center;
+}
+
+.droite_vert {
+    text-align: right;
+    background-color: green;
+    color: white;
+}
+
+.gauche_haut_rouge {
+    text-align: left top;
+    background-color: red;
+    color: white;
+}
+
+.gauche{
+    text-align: left;
+}
+
+.centre_bas_bleu{
+    text-align: center bottom;
+    background-color: blue;
+    color: white;
+}
+
+.droite{
+    text-align: right;
+}
+
+/*Oblige le centrage de l'image dans la case*/
+td img {
+    display: block;
+    margin: auto;
+}
