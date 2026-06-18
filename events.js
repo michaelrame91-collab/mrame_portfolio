@@ -21,7 +21,7 @@ document.addEventListener('click', function(event) {
 
 
 
-/**Ne sers qu'à ajouter des easters eggs*/
+/**Ne sers qu'à ajouter des Easter eggs*/
 document.querySelectorAll('.superlink').forEach(function(link) {
     link.addEventListener("click", function() {
 
