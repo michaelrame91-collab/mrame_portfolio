@@ -343,7 +343,7 @@ footer img {
 
 @media (min-width: 1920px) {
     html {
-        zoom: 125%;
+        font-size: 125%;
     }
 }
 
