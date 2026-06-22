@@ -8,7 +8,7 @@
 
 body {
     margin: 0;
-    padding-bottom: 58px; /* Évite que le footer cache le contenu */
+    padding-bottom: 67px; /* Évite que le footer cache le contenu */
     font-family: Arial, sans-serif;
     background: #f4f4f4;
     color: #000;
@@ -181,7 +181,7 @@ footer {
     bottom: 0;
 
     width: 100%;
-    padding: 4px;
+    padding: 8px;
 
     display: flex;
     justify-content: center;
