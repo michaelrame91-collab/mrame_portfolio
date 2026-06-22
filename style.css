@@ -312,6 +312,7 @@ footer img {
     /* Footer */
     footer {
         flex-direction: column;
+        padding: 11px;
     }
 
     footer div {
