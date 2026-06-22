@@ -341,9 +341,9 @@ footer img {
 
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1530px) {
     html {
-        font-size: 125%;
+        zoom: 125%;
     }
 }
 
