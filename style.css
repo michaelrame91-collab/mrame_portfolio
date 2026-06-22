@@ -60,7 +60,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 56px;
+    gap: 62px;
     padding: 20px;
     font-size: large;
 }
@@ -341,6 +341,12 @@ footer img {
         padding: 20px;
         gap: 0;
     }
+    html {
+        zoom: 100%;
+    }
+}
+
+@media (max-height: 800px) {
     html {
         zoom: 100%;
     }
