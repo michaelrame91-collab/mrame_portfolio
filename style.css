@@ -351,6 +351,12 @@ footer img {
     }
 }
 
+@media (min-width: 3000px) {
+    html {
+        zoom: 175%;
+    }
+}
+
 /* Animation prévue */
 
 @keyframes colorChange {
