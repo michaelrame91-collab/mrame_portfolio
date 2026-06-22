@@ -2,6 +2,10 @@
    Réglages généraux
 ========================= */
 
+html {
+    zoom: 1.25;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -56,7 +60,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 67px;
+    gap: 58px;
     padding: 20px;
     font-size: large;
 }
@@ -217,43 +221,6 @@ footer img {
     }
 
 
-    /* Menu burger */
-    .burger {
-        display: block;
-        position: absolute;
-        top: 10px;
-        right: 20px;
-
-        padding: 10px;
-        cursor: pointer;
-        font-size: 22px;
-        z-index: 1000;
-    }
-
-    #menu {
-        display: none;
-        position: absolute;
-        top: 50px;
-        right: 10px;
-
-        padding: 10px;
-        flex-direction: column;
-
-        background: #161616;
-        border: 1px solid #999;
-        z-index: 999;
-    }
-
-    #menu a {
-        color: white;
-        font-size: 13px;
-    }
-
-    #menu-toggle:checked + .burger + #menu {
-        display: flex;
-    }
-
-
     /* Navigation */
     nav {
         gap: 20px;
@@ -320,9 +287,46 @@ footer img {
 }
 
 
-/* Cache le burger sur ordinateur */
+@media (max-width: 1520px) {
+    /* Menu burger */
+    .burger {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
 
-@media (min-width: 1282px) {
+        padding: 10px;
+        cursor: pointer;
+        font-size: 22px;
+        z-index: 1000;
+    }
+
+    #menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+
+        padding: 10px;
+        flex-direction: column;
+
+        background: #161616;
+        border: 1px solid #999;
+        z-index: 999;
+    }
+
+    #menu a {
+        color: white;
+        font-size: 13px;
+    }
+
+    #menu-toggle:checked + .burger + #menu {
+        display: flex;
+    }
+}
+
+@media (min-width: 1520px) {
+    /* Cache le Menu burger */
     .burger {
         display: none;
     }
@@ -332,18 +336,13 @@ footer img {
 /* Header vertical sur petits écrans */
 
 @media (max-width: 611px) {
-
     header {
         flex-direction: column;
         padding: 20px;
         gap: 0;
     }
-
-}
-
-@media (min-width: 1531px) {
     html {
-        zoom: 125%;
+        zoom: 100%;
     }
 }
 
