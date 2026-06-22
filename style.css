@@ -275,12 +275,6 @@ footer img {
         font-size: 12pt;
     }
 
-
-    /* Footer */
-    footer {
-        flex-direction: column;
-    }
-
     footer div {
         position: static;
     }
@@ -322,6 +316,11 @@ footer img {
 
     #menu-toggle:checked + .burger + #menu {
         display: flex;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
     }
 }
 
