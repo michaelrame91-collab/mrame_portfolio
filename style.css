@@ -220,15 +220,6 @@ footer img {
         overflow-x: hidden;
     }
 
-
-    /* Navigation */
-    nav {
-        gap: 20px;
-        padding: 10px;
-        flex-wrap: wrap;
-    }
-
-
     /* Compétences */
     .skills-mini {
         gap: 15px;
