@@ -12,7 +12,7 @@ html {
 
 body {
     margin: 0;
-    padding-bottom: 58px; /* Évite que le footer cache le contenu */
+    padding-bottom: 76px; /* Évite que le footer cache le contenu */
     font-family: Arial, sans-serif;
     background: #f4f4f4;
     color: #000;
@@ -61,7 +61,7 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 62px;
-    padding: 20px;
+    padding: 29px;
     font-size: large;
 }
 
@@ -185,7 +185,7 @@ footer {
     bottom: 0;
 
     width: 100%;
-    padding: 4px;
+    padding: 14px;
 
     display: flex;
     justify-content: center;
