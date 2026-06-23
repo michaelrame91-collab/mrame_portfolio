@@ -28,7 +28,6 @@ body {
 header {
     background: #000;
     color: gray;
-    padding: 11px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,16 +35,16 @@ header {
 }
 
 header h1 {
-    font-size: 44px;
+    font-size: 49px;
 }
 
 header p {
-    font-size: 25px;
+    font-size: 29px;
 }
 
 header img {
-    width: 148px;
-    height: 148px;
+    width: 152px;
+    height: 152px;
     border-radius: 31%;
     object-fit: cover;
 }
@@ -85,7 +84,7 @@ header a:hover {
 
 main {
     max-width: 1030px;
-    margin: 20px auto;
+    margin: 29px auto;
     padding: 20px;
     background: white;
     border-radius: 40px;
