@@ -59,7 +59,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 62px;
+    gap: 58px;
     padding: 29px;
     font-size: large;
 }
@@ -264,34 +264,31 @@ footer img {
     main p {
         font-size: 12pt;
     }
-
-    footer div {
-        position: static;
-    }
 }
 
 
-@media (max-width: 1520px) {
+@media (max-width: 1545px) {
     /* Menu burger */
     .burger {
         display: block;
         position: absolute;
-        top: 10px;
+        top: 4px;
         right: 20px;
-
+        
         padding: 10px;
         cursor: pointer;
-        font-size: 22px;
+        font-size: 40px;
         z-index: 1000;
     }
 
     #menu {
         display: none;
         position: absolute;
-        top: 50px;
-        right: 10px;
+        top: 69px;
+        right: 0px;
 
         padding: 10px;
+        gap: 40px;
         flex-direction: column;
 
         background: #161616;
@@ -312,9 +309,13 @@ footer img {
     footer {
         flex-direction: column;
     }
+    
+    footer div {
+        position: static;
+    }
 }
 
-@media (min-width: 1520px) {
+@media (min-width: 1546px) {
     /* Cache le Menu burger */
     .burger {
         display: none;
