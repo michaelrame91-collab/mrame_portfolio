@@ -36,12 +36,179 @@ document.querySelectorAll('.superlink').forEach(function(link) {
 });
 
 
+// ================================
+// POPUP CUSTOM : MYSTERY MAN
+// ================================
+
+const mysteryStyle = document.createElement("style");
+
+mysteryStyle.textContent = `
+#mystery-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    font-family: monospace;
+}
+
+#mystery-window {
+    background: black;
+    color: white;
+    border: 2px solid white;
+    width: 350px;
+    padding: 20px;
+    box-shadow: 0 0 20px white;
+    text-align: center;
+}
+
+#mystery-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+#mystery-message {
+    margin-bottom: 25px;
+}
+
+.mystery-btn {
+    background: black;
+    color: white;
+    border: 1px solid white;
+    padding: 8px 25px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+.mystery-btn:hover {
+    background: white;
+    color: black;
+}
+`;
+
+document.head.appendChild(mysteryStyle);
+
+
+const mysteryPopup = document.createElement("div");
+
+mysteryPopup.id = "mystery-popup";
+
+mysteryPopup.innerHTML = `
+<div id="mystery-window">
+
+    <div id="mystery-title">
+        Mystery Man
+    </div>
+
+    <div id="mystery-message"></div>
+
+    <button id="mystery-yes" class="mystery-btn">
+        Oui
+    </button>
+
+    <button id="mystery-no" class="mystery-btn">
+        Non
+    </button>
+
+</div>
+`;
+
+document.body.appendChild(mysteryPopup);
+
+
+function mysteryConfirm(text, yesText = "Oui", noText = "Non") {
+
+    return new Promise(resolve => {
+
+        const message =
+            document.getElementById("mystery-message");
+
+        const yes =
+            document.getElementById("mystery-yes");
+
+        const no =
+            document.getElementById("mystery-no");
+
+
+        message.textContent = text;
+
+        yes.textContent = yesText;
+        no.textContent = noText;
+
+        yes.style.display = "inline-block";
+        no.style.display = "inline-block";
+
+        mysteryPopup.style.display = "flex";
+
+
+        yes.onclick = () => {
+
+            mysteryPopup.style.display = "none";
+            resolve(true);
+
+        };
+
+
+        no.onclick = () => {
+
+            mysteryPopup.style.display = "none";
+            resolve(false);
+
+        };
+
+    });
+
+}
+
+
+
+function mysteryAlert(text) {
+
+    return new Promise(resolve => {
+
+        const message =
+            document.getElementById("mystery-message");
+
+        const yes =
+            document.getElementById("mystery-yes");
+
+        const no =
+            document.getElementById("mystery-no");
+
+
+        message.textContent = text;
+
+        yes.textContent = "Suivant";
+
+        yes.style.display = "inline-block";
+        no.style.display = "none";
+
+
+        mysteryPopup.style.display = "flex";
+
+
+        yes.onclick = () => {
+
+            mysteryPopup.style.display = "none";
+            yes.textContent = "Oui";
+
+            resolve();
+
+        };
+
+    });
+
+}
 
 const img = document.getElementById("gaster-img");
 
 if (img) {
 
-    img.addEventListener("click", function () {
+    img.addEventListener("click", async function () {
 
         let r = Math.random();
 
@@ -115,26 +282,84 @@ if (img) {
 
             root.style.transform = `translate(${x}px, ${y}px)`;
             root.style.filter =
-                `invert(1) hue-rotate(${hue}deg) contrast(1.5)`;
+                `invert(1)`;
 
         }, 40);
 
-        const step1 = confirm("👁️ Une présence t’observe...");
+        const step1 = await mysteryConfirm(
+            `👁️ Une présence t’observe...`,
+            "L'accepter",
+            "Reculer"
+        );
 
         if (!step1) {
-            alert("...");
-            console.log("...")
             reset();
+            function mysteryClockAlert() {
+
+                return new Promise(resolve => {
+
+                    const message =
+                        document.getElementById("mystery-message");
+
+                    const yes =
+                        document.getElementById("mystery-yes");
+
+                    const no =
+                        document.getElementById("mystery-no");
+
+
+                    function updateClock() {
+
+                        message.textContent =
+                            `👁️ Il est ${new Date().toLocaleTimeString([], {
+                                hour: "2-digit",
+                                minute: "2-digit",
+                                second: "2-digit"
+                            })} à l'endroit où tu te trouves...`;
+
+                    }
+
+
+                    updateClock();
+
+                    const clockInterval = setInterval(updateClock, 1000);
+
+
+                    yes.textContent = "Suivant";
+
+                    yes.style.display = "inline-block";
+                    no.style.display = "none";
+
+
+                    mysteryPopup.style.display = "flex";
+
+
+                    yes.onclick = () => {
+
+                        clearInterval(clockInterval);
+
+                        mysteryPopup.style.display = "none";
+                        yes.textContent = "Oui";
+
+                        resolve();
+
+                    };
+
+                });
+
+            }
+            await mysteryClockAlert();
+            console.log("...")
             return;
         }
 
         clearVisualEffects();
 
-        const step2 = confirm("👁️ Continue à cliquer...");
+        const step2 = await mysteryConfirm(`👁️ Continue à cliquer...`);
 
         if (!step2) {
 
-            alert("👁️ Tu as reculé...");
+            await mysteryAlert(`👁️ Tu as \"tourné\" les talons...`);
             console.log("👁️ Tu aurais pu aller plus loin...")
 
             root.style.filter = "none";
@@ -142,12 +367,12 @@ if (img) {
             root.style.transformOrigin = "center";
             root.style.transform = "rotate(180deg)";
 
-            setTimeout(() => {
+            setTimeout(async () => {
 
                 root.style.transition = "none";
                 root.style.transform = "none";
 
-                alert("👁️ Cela me fait presque tourner la tête...");
+                await mysteryAlert(`👁️ Cela me fait presque tourner la tête...`);
                 reset();
 
             }, 3000);
@@ -157,7 +382,7 @@ if (img) {
 
         clearVisualEffects();
 
-        const step3 = confirm("👁️ Tu y es presque...");
+        const step3 = await mysteryConfirm(`👁️ Tu y es presque...`);
 
         if (!step3) {
 
@@ -178,12 +403,12 @@ if (img) {
 
             document.head.appendChild(style);
 
-            alert("👁️ Presque... mais non.");
+            await mysteryAlert(`👁️ Presque... mais non.`);
             console.log("👁️ J'en suis un peu déçue que tu aies abandonné...")
 
-            setTimeout(() => {
+            setTimeout(async () => {
                 style.remove();
-            }, 4000);
+            }, 3000);
 
             reset();
             return;
@@ -191,30 +416,30 @@ if (img) {
 
         clearVisualEffects();
 
-        const step4 = confirm("👁️ N'aie pas peur...");
+        const step4 = await mysteryConfirm(`👁️ N'aie pas peur...`);
 
         if (!step4) {
 
-            alert("👁️ Trop tard pour fuir...");
+            await mysteryAlert(`👁️ Trop tard pour fuir...`);
 
             shakeInterval = setInterval(() => {
 
-                const x = (Math.random() - 0.5) * 8;
-                const y = (Math.random() - 0.5) * 8;
+                const x = (Math.random() - 0.5) * 13;
+                const y = (Math.random() - 0.5) * 13;
 
                 root.style.transform = `translate(${x}px, ${y}px)`;
                 root.style.filter = "invert(1)";
 
             }, 30);
 
-            setTimeout(() => {
+            setTimeout(async () => {
 
                 clearInterval(shakeInterval);
 
                 root.style.transform = "none";
                 root.style.filter = "none";
 
-                alert("👁️ Je t'ai eu...");
+                await mysteryAlert(`👁️ Je t'ai eu...`, `Sortir`);
                 console.log("👁️ Amusant, n'est-ce pas ?")
 
                 reset();
@@ -240,14 +465,14 @@ if (img) {
 
         }, 16);
 
-        setTimeout(() => {
+        setTimeout(async () => {
 
             clearInterval(spinInterval);
 
             reset();
 
-            alert(
-                "❄︎◆︎ ♏︎⬧︎ ❑︎◆︎♏︎●︎❑︎◆︎🕯︎◆︎■︎ ♎︎🕯︎♋︎⬧︎⬧︎♏︎⌘︎ ♍︎◆︎❒︎♓︎♏︎◆︎⌧︎📪︎ ■︎🕯︎♏︎⬧︎⧫︎📫︎♍︎♏︎ ◻︎♋︎⬧︎ ✍︎"
+            await mysteryAlert(
+                `❄︎◆︎ ♏︎⬧︎ ❑︎◆︎♏︎●︎❑︎◆︎🕯︎◆︎■︎ ♎︎🕯︎♋︎⬧︎⬧︎♏︎⌘︎ ♍︎◆︎❒︎♓︎♏︎◆︎⌧︎📪︎ ■︎🕯︎♏︎⬧︎⧫︎📫︎♍︎♏︎ ◻︎♋︎⬧︎ ✍︎`
             );
 
         }, 4000);

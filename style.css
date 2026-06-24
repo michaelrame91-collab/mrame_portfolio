@@ -219,6 +219,43 @@ footer img {
         overflow-x: hidden;
     }
 
+    /* Menu burger */
+    .burger {
+        display: block;
+        position: absolute;
+        top: 4px;
+        right: 20px;
+        
+        padding: 10px;
+        cursor: pointer;
+        font-size: 40px;
+        z-index: 1000;
+    }
+
+    #menu {
+        display: none;
+        position: absolute;
+        top: 69px;
+        right: 0px;
+
+        padding: 10px;
+        gap: 40px;
+        flex-direction: column;
+
+        background: #161616;
+        border: 1px solid #999;
+        z-index: 999;
+    }
+
+    #menu a {
+        color: white;
+        font-size: 13px;
+    }
+
+    #menu-toggle:checked + .burger + #menu {
+        display: flex;
+    }
+
     /* Compétences */
     .skills-mini {
         gap: 15px;
@@ -264,46 +301,6 @@ footer img {
     main p {
         font-size: 12pt;
     }
-}
-
-
-@media (max-width: 1545px) {
-    /* Menu burger */
-    .burger {
-        display: block;
-        position: absolute;
-        top: 4px;
-        right: 20px;
-        
-        padding: 10px;
-        cursor: pointer;
-        font-size: 40px;
-        z-index: 1000;
-    }
-
-    #menu {
-        display: none;
-        position: absolute;
-        top: 69px;
-        right: 0px;
-
-        padding: 10px;
-        gap: 40px;
-        flex-direction: column;
-
-        background: #161616;
-        border: 1px solid #999;
-        z-index: 999;
-    }
-
-    #menu a {
-        color: white;
-        font-size: 13px;
-    }
-
-    #menu-toggle:checked + .burger + #menu {
-        display: flex;
-    }
 
     /* Footer */
     footer {
@@ -315,7 +312,7 @@ footer img {
     }
 }
 
-@media (min-width: 1546px) {
+@media (min-width: 1280px) {
     /* Cache le Menu burger */
     .burger {
         display: none;
@@ -325,18 +322,14 @@ footer img {
 
 /* Header vertical sur petits écrans */
 
-@media (max-width: 611px) {
-    header {
-        flex-direction: column;
-        padding: 20px;
-        gap: 0;
-    }
-    html {
-        zoom: 100%;
-    }
-}
-
 @media (max-height: 800px) {
+    @media (max-width: 650px) {
+        header {
+            flex-direction: column;
+            padding: 20px;
+            gap: 0;
+        }
+    }
     html {
         zoom: 100%;
     }
