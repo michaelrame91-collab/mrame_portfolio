@@ -424,8 +424,8 @@ if (img) {
 
             shakeInterval = setInterval(() => {
 
-                const x = (Math.random() - 0.5) * 13;
-                const y = (Math.random() - 0.5) * 13;
+                const x = (Math.random() - 0.5) * 17;
+                const y = (Math.random() - 0.5) * 17;
 
                 root.style.transform = `translate(${x}px, ${y}px)`;
                 root.style.filter = "invert(1)";
