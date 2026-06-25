@@ -338,7 +338,7 @@ footer img {
     }
 }
 
-@media (min-width: 1546px) {
+@media (min-width: 1545.1px) {
     /* Cache le Menu burger */
     .burger {
         display: none;
