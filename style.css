@@ -360,6 +360,12 @@ footer img {
     }
 }
 
+@media (min-height: 870px) {
+    html{
+        zoom: 1.25;
+    }
+}
+
 /* Animation prévue */
 
 @keyframes colorChange {
