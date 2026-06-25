@@ -181,7 +181,7 @@ th, td {
 .articles-veille {
     width: 98%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 22px;
     justify-items: center;
 }
