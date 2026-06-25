@@ -186,6 +186,9 @@ th, td {
     justify-items: center;
 }
 
+.articles-veille h3{
+    text-align: center;
+}
 
 .articles-veille .block {
     width: 100%;
