@@ -120,7 +120,7 @@ mysteryPopup.innerHTML = `
 document.body.appendChild(mysteryPopup);
 
 
-function mysteryConfirm(text, yesText = "Oui", noText = "Non") {
+function mysteryConfirm(text, yesText = "Continuer", noText = "Refuser") {
 
     return new Promise(resolve => {
 
@@ -322,7 +322,7 @@ if (img) {
 
                     updateClock();
 
-                    const clockInterval = setInterval(updateClock, 1000);
+                    const clockInterval = setInterval(updateClock, 100);
 
 
                     yes.textContent = "Suivant";
@@ -471,8 +471,69 @@ if (img) {
 
             reset();
 
+            function mysteryAlert(text) {
+                return new Promise(resolve => {
+
+                    const message =
+                        document.getElementById("mystery-message");
+                    const yes =
+                        document.getElementById("mystery-yes");
+                    const no =
+                        document.getElementById("mystery-no");
+
+
+                    // Chargement de Wingdings
+                    const style = document.createElement("style");
+
+                    style.textContent = `
+                        @font-face {
+                            font-family: "WingdingsCustom";
+                            src: url("Fonts/wingding.ttf") format("truetype");
+                        }
+
+                        .wingding-mode {
+                            font-family: "WingdingsCustom" !important;
+                        }
+                    `;
+
+                    document.head.appendChild(style);
+
+
+                    // Application de Wingdings uniquement au message
+                    message.classList.add("wingding-mode");
+
+                    message.textContent = text;
+
+
+                    yes.textContent = "Suivant";
+                    yes.style.display = "inline-block";
+                    no.style.display = "none";
+
+
+                    mysteryPopup.style.display = "flex";
+
+
+                    yes.onclick = () => {
+
+                        mysteryPopup.style.display = "none";
+
+                        message.classList.remove("wingding-mode");
+
+                        style.remove();
+
+                        yes.textContent = "Oui";
+
+                        resolve();
+
+                    };
+
+                });
+
+            }
+
+            // Utilisation
             await mysteryAlert(
-                `❄︎◆︎ ♏︎⬧︎ ❑︎◆︎♏︎●︎❑︎◆︎🕯︎◆︎■︎ ♎︎🕯︎♋︎⬧︎⬧︎♏︎⌘︎ ♍︎◆︎❒︎♓︎♏︎◆︎⌧︎📪︎ ■︎🕯︎♏︎⬧︎⧫︎📫︎♍︎♏︎ ◻︎♋︎⬧︎ ✍︎`
+                "Tu es quelqu'un d'assez curieux, n'est-ce pas ?"
             );
 
         }, 4000);
