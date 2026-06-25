@@ -179,16 +179,15 @@ th, td {
 ========================= */
 
 .articles-veille {
-    width: 94%;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(274px, 1fr));
     gap: 22px;
     justify-items: center;
 }
 
 .articles-veille h3{
     text-align: center;
-    font-size: medium;
 }
 
 .articles-veille .block {
@@ -236,13 +235,71 @@ footer img {
    Version tablette / mobile
 ========================= */
 
-@media (max-width: 1281px) {
+@media (max-width: 1280px) {
 
     body {
         min-width: 0;
         overflow-x: hidden;
     }
 
+    /* Compétences */
+    .skills-mini {
+        gap: 15px;
+    }
+
+    .mini-item {
+        width: 70px;
+        padding: 6px;
+    }
+
+    .mini-item img {
+        width: 45px;
+        height: 45px;
+    }
+
+
+    /* Tableau */
+    table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    th,
+    td {
+        padding: 7px;
+    }
+
+
+    /* Texte */
+    main {
+        max-width: 94%;
+        margin-bottom: 76px;
+    }
+
+    main h1 {
+        font-size: 16pt;
+    }
+
+    main h2 {
+        font-size: 14pt;
+    }
+
+    main p {
+        font-size: 12pt;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+    }
+    
+    footer div {
+        position: static;
+    }
+}
+
+@media (max-width: 1545px) {
     /* Menu burger */
     .burger {
         display: block;
@@ -279,64 +336,9 @@ footer img {
     #menu-toggle:checked + .burger + #menu {
         display: flex;
     }
-
-    /* Compétences */
-    .skills-mini {
-        gap: 15px;
-    }
-
-    .mini-item {
-        width: 70px;
-        padding: 6px;
-    }
-
-    .mini-item img {
-        width: 45px;
-        height: 45px;
-    }
-
-
-    /* Tableau */
-    table {
-        display: block;
-        max-width: 100%;
-        overflow-x: auto;
-    }
-
-    th,
-    td {
-        padding: 7px;
-    }
-
-
-    /* Texte */
-    main {
-        max-width: 94%;
-    }
-
-    main h1 {
-        font-size: 16pt;
-    }
-
-    main h2 {
-        font-size: 14pt;
-    }
-
-    main p {
-        font-size: 12pt;
-    }
-
-    /* Footer */
-    footer {
-        flex-direction: column;
-    }
-    
-    footer div {
-        position: static;
-    }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1546px) {
     /* Cache le Menu burger */
     .burger {
         display: none;
@@ -346,16 +348,11 @@ footer img {
 
 /* Header vertical sur petits écrans */
 
-@media (max-height: 800px) {
-    @media (max-width: 650px) {
-        header {
-            flex-direction: column;
-            padding: 20px;
-            gap: 0;
-        }
-    }
-    html {
-        zoom: 100%;
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 0;
     }
 }
 
