@@ -182,12 +182,13 @@ th, td {
     width: 98%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    gap: 22px;
     justify-items: center;
 }
 
 .articles-veille h3{
     text-align: center;
+    font-size: medium;
 }
 
 .articles-veille .block {
