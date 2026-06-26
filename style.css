@@ -119,7 +119,7 @@ main hr {
 .gif::before {
     content: "";
     position: absolute;
-    top: 775px;
+    top: 780px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -334,6 +334,10 @@ footer img {
 
     main p {
         font-size: 12pt;
+    }
+
+    .gif::before {
+        top: 220px;
     }
 
     /* Footer */
