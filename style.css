@@ -104,8 +104,7 @@ header a,
     text-decoration: none;
 }
 
-main a,
-header a {
+main a {
    color: blue;
    text-decoration: underline;
 }
