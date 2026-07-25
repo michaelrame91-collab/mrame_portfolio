@@ -106,7 +106,8 @@ header a,
 
 main a,
 header a {
-   color: blue
+   color: blue;
+   text-decoration: underline;
 }
 
 main hr {
