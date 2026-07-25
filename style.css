@@ -104,6 +104,11 @@ header a,
     text-decoration: none;
 }
 
+main a,
+header a {
+   color: blue
+}
+
 main hr {
     width: 94%;
     height: 1px;
