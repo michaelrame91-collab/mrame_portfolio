@@ -63,7 +63,8 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 
-    padding: 0 30px; /* 30px à gauche et à droite */
+    padding: 0 25px;
+    margin: 0 10px;
     border-right: 1px solid black;
 }
 
