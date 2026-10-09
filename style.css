@@ -63,9 +63,8 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 
-    padding: 0 25px;
-    margin: 0 10px;
-    border-right: 1px solid black;
+    border-right: 1px solid #777;
+    padding-right: 25px;
 }
 
 nav a:first-child {
