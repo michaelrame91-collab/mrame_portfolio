@@ -250,7 +250,7 @@ footer img {
    Version tablette / mobile
 ========================= */
 
-@media (max-width: 1400px) {
+@media (max-width: 1280px) {
 
     body {
         min-width: 0;
@@ -356,7 +356,7 @@ footer img {
 }
 
 
-@media (min-width: 1400.1px) {
+@media (min-width: 1280.1px) {
     /* Cache le Menu burger */
     .burger {
         display: none;
