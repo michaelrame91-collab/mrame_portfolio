@@ -63,11 +63,13 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 
+    padding: 0 30px; /* 30px à gauche et à droite */
     border-right: 1px solid black;
-    padding-right: 25px;
 }
 
-/* Pas de trait après le dernier bouton */
+nav a:first-child {
+    border-left: none;
+}
 nav a:last-child {
     border-right: none;
 }
