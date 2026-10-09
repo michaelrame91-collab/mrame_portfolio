@@ -378,12 +378,6 @@ footer img {
     }
 }
 
-@media (min-height: 870px) {
-    html{
-        zoom: 1.25;
-    }
-}
-
 @media (min-width: 3000px) {
     html {
         zoom: 175%;
