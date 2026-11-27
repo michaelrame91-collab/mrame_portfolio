@@ -233,7 +233,7 @@ if (img) {
             return;
         }
 
-        if (r < 0.80) {
+        if (r < 0.85) {
             window.open("Mystère.txt", "_blank");
             return;
         }
